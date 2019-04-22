@@ -1,6 +1,6 @@
 package functions
 
-func main() {
+func functionss() {
 	// Can use the blank identifier if we only want 1 of a functions return values
 	area, _ := rectProps2(15.2, 15.6)
 	println(area)

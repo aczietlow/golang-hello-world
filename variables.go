@@ -5,7 +5,7 @@ import (
 	"math"
 )
 
-func main() {
+func variables() {
 	var day int // Declares int variable.
 	fmt.Println("Been working on go for",  day, "days.")
 	day = 5

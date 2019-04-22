@@ -5,7 +5,7 @@ import (
 	"unsafe"
 )
 
-func main() {
+func types() {
 	var a bool = false
 	b := true
 	fmt.Println(a, "and", b)
