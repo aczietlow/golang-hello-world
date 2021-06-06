@@ -1,9 +1,13 @@
-package variables
+package main
 
 import (
 	"fmt"
 	"math"
 )
+
+func main() {
+	variables()
+}
 
 func variables() {
 	var day int // Declares int variable.

@@ -1,9 +1,13 @@
-package types
+package main
 
 import (
 	"fmt"
 	"unsafe"
 )
+
+func main() {
+	types()
+}
 
 func types() {
 	var a bool = false

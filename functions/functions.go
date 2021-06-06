@@ -1,4 +1,11 @@
-package functions
+package main
+
+func main() {
+	sum := addNum(2, 6)
+	println(sum)
+	functions()
+	println(rectProps2(1.8, 4.0))
+}
 
 func functions() {
 	// Can use the blank identifier if we only want 1 of a functions return values
