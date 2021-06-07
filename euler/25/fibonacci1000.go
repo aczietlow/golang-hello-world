@@ -12,19 +12,13 @@ func main() {
 	digits, index := 0, 1
 
 	for digits < 1000 {
-		// where fm == Fn and fn == Fn+1
 		// Sums fm and fn, assigning to fm.
 		fm.Add(fm, fn)
-		digits = getNumberDigits(fm.String())
+		digits = len(fm.String())
 		index++
 		fm, fn = fn, fm
 	}
 
 	fmt.Printf("The first occurence of %d digits is at the %d fib index\n", digits, index)
 	println(fm.String())
-
-}
-
-func getNumberDigits(bigIntAsString string) int {
-	return len(bigIntAsString)
 }
