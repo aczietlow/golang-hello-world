@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"github.com/aczietlow/stringutil"
 	"unsafe"
 )
 
@@ -43,4 +44,39 @@ func types() {
 	fmt.Println("sum:", cadd)
 	cmul := c1 * c2
 	fmt.Println("product:", cmul)
+	customType()
+	string()
+}
+
+func customType() {
+	var a int
+	fmt.Println(a)
+
+	type banana int
+	var b banana
+	fmt.Println(b)
+	fmt.Printf("%T\n", b)
+
+}
+
+func string() {
+	s1 := "new string"
+	println(s1)
+
+	s2 := `Baclticks are 
+string 
+literals and 
+interrupt EVERYTHING"`
+	println(s2)
+
+	// In go, strings are a slice of bytes
+	ss1 := []byte(s1)
+	fmt.Println(ss1)
+	fmt.Printf("%T\n", ss1)
+
+	for i := 0; i < len(ss1); i++ {
+		fmt.Printf("%#U ", s1[i])
+	}
+
+	fmt.Println(stringutil.Reverse(s1))
 }
