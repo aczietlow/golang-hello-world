@@ -16,24 +16,8 @@ const (
 )
 
 func main() {
-	numericalSystem()
-	operators()
-	createConstants()
-	variablesAndBitShifting()
-	rawStringLiteral()
-	useIota()
-}
-
-func numericalSystem() {
 	// Write a program that prints a number in decimal, binary, and hex
-	z := 42876
-	fmt.Printf("decimal %d\n", z)
-	fmt.Printf("hexidecimal %X\n", z)
-	fmt.Printf("hexidecimal %#X\n", z)
-	fmt.Printf("binary %b\n", z)
-}
-
-func operators() {
+	numericalSystem()
 	/*
 		Using the following operators, write expressions and assign their values to variables:
 		==
@@ -44,6 +28,30 @@ func operators() {
 		>
 		Now print each of the variables.
 	*/
+	operators()
+	// Create TYPED and UNTYPED constants. Print the values of the constants.
+	createConstants()
+	//Write a program that
+	//assigns an int to a variable
+	//prints that int in decimal, binary, and hex
+	//shifts the bits of that int over 1 position to the left, and assigns that to a variable
+	//prints that variable in decimal, binary, and hex
+	variablesAndBitShifting()
+	// Create a variable of type string using a raw string literal. Print it.
+	rawStringLiteral()
+	// Using iota, create 4 constants for the NEXT 4 years. Print the constant values.
+	useIota()
+}
+
+func numericalSystem() {
+	z := 42876
+	fmt.Printf("decimal %d\n", z)
+	fmt.Printf("hexidecimal %X\n", z)
+	fmt.Printf("hexidecimal %#X\n", z)
+	fmt.Printf("binary %b\n", z)
+}
+
+func operators() {
 	a := 41 == 42
 	b := 41 <= 42
 	c := 41 >= 42
@@ -60,17 +68,11 @@ func operators() {
 }
 
 func createConstants() {
-	// Create TYPED and UNTYPED constants. Print the values of the constants.
 	fmt.Printf("value %v\ttype %T\t\n", x, x)
 	fmt.Printf("value %v\ttype %T\t\n", y, y)
 }
 
 func variablesAndBitShifting() {
-	//Write a program that
-	//assigns an int to a variable
-	//prints that int in decimal, binary, and hex
-	//shifts the bits of that int over 1 position to the left, and assigns that to a variable
-	//prints that variable in decimal, binary, and hex
 	bar := 2
 	fmt.Printf("D-%d\t B-%b\t H-%#x\n", bar, bar, bar)
 	baz := bar << 1
@@ -78,7 +80,6 @@ func variablesAndBitShifting() {
 }
 
 func rawStringLiteral() {
-	// Create a variable of type string using a raw string literal. Print it.
 	q := `there 
 is 
 no 
@@ -87,6 +88,5 @@ Zule`
 }
 
 func useIota() {
-	// Using iota, create 4 constants for the NEXT 4 years. Print the constant values.
 	println(y1, y2, y3, y4)
 }
