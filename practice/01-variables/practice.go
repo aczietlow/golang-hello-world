@@ -3,13 +3,13 @@ package main
 import "fmt"
 
 func main() {
-	// Using the short declaration operator, assign these values to variables with the identifiers x,y,z
+	// Using the short declaration operator, assign these values to data with the identifiers x,y,z
 	// 42, "james bond", true
-	// print the values stored in those variables using a single print statement & multiple print statements
+	// print the values stored in those data using a single print statement & multiple print statements
 	basicVariables()
 
-	// use var to declare 3 variables
-	// the variables should have package level scope
+	// use var to declare 3 data
+	// the data should have package level scope
 	// do not assign values
 	// use the following identifiers
 	// x is int
@@ -17,7 +17,7 @@ func main() {
 	// z is bool
 	instantiateVarialbes()
 
-	// Assign values to variables at the package level.
+	// Assign values to data at the package level.
 	// print all of the values into a single string
 	// assign the returned values of type string using the short declaration operator to a variable with the identifier "s"
 	assignVariables()

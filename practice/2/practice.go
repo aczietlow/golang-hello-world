@@ -19,14 +19,14 @@ func main() {
 	// Write a program that prints a number in decimal, binary, and hex
 	numericalSystem()
 	/*
-		Using the following operators, write expressions and assign their values to variables:
+		Using the following operators, write expressions and assign their values to data:
 		==
 		<=
 		>=
 		!=
 		<
 		>
-		Now print each of the variables.
+		Now print each of the data.
 	*/
 	operators()
 	// Create TYPED and UNTYPED constants. Print the values of the constants.
