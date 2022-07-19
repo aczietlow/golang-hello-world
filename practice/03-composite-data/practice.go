@@ -21,7 +21,14 @@ func main() {
 	// - print out the type of slice
 	two()
 
-	// @TODO Continue working with slices and maps? maybe?
+	// Take code from previous example
+	// slice the slice from the previous example
+	// display the following
+	// [2, 4, 8, 16, 32]
+	// [64, 128, 256, 512, 1028]
+	// [8, 16, 32, 64, 128, 256]
+	// [4, 8, 16, 32, 64, 128]
+	three()
 }
 
 func one() {
@@ -39,4 +46,12 @@ func two() {
 		fmt.Println(i, v)
 	}
 	fmt.Printf("%T\n", s)
+}
+
+func three() {
+	s := []int{2, 4, 8, 16, 32, 64, 128, 256, 512, 1028}
+	fmt.Println(s[:5])
+	fmt.Println(s[5:])
+	fmt.Println(s[2:8])
+	fmt.Println(s[1:7])
 }
