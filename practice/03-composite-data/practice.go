@@ -53,10 +53,22 @@ func main() {
 	// Print out all the values, along with their index position, without using the range clause.
 	six()
 
-	//seven()
-	//eight()
-	//nine()
-	//ten()
+	// Create a slice of string.
+	// Store the following data in the multi-dimensional slice:
+	// - james, bond, "shaken, not stirred"
+	// - miss, moneypenny, "helloooo, james"
+	// range over the records then range over the data in each record.
+	seven()
+
+	// Create  a map with a key of TYPE string, which is a person's last name, and a value of type []string which stores
+	// their favorite things. Store 3 records in your map. Print out all of the values, along their index position.
+	eight()
+
+	// Using the code from the previous example, add a record to your map and print out using the range loop.
+	nine()
+
+	// Using the code from the previous example, delete a record and print
+	ten()
 }
 
 func one() {
@@ -115,5 +127,75 @@ func six() {
 	fmt.Println(cap(x))
 	for i := 0; i < len(x); i++ {
 		fmt.Println(i, x[i])
+	}
+}
+
+func seven() {
+	s := []string{"James", "Bond", "Shaken, not stirred"}
+	t := []string{"Miss", "Moneypenny", "Helloooo, James"}
+	y := [][]string{s, t}
+	fmt.Println(y)
+	for _, v := range y {
+		for _, x := range v {
+			fmt.Println(x)
+		}
+	}
+}
+
+func eight() {
+	// remember, maps use keys, slices and arrays use index.
+	s := map[string]string{
+		`test`:       `foo`,
+		`bond_jaems`: `Shaken, not stirred`,
+	}
+
+	t := map[string][]string{
+		`bond_james`:      []string{`Shaken, not stirred`, `Martinis`, `Women`},
+		`moneypenny_miss`: []string{`James Bond`, `Computer Science`},
+		`no_dr`:           []string{`Being Evil`, `Ice Cream`, `Sunsets`},
+	}
+
+	for i, v := range s {
+		fmt.Printf("index %v: %v\n", i, v)
+	}
+
+	for i1, v := range t {
+		for i2, v2 := range v {
+			fmt.Printf("map index: %v \t slice index:%v \t %v\n", i1, i2, v2)
+		}
+	}
+}
+
+func nine() {
+	t := map[string][]string{
+		`bond_james`:      []string{`Shaken, not stirred`, `Martinis`, `Women`},
+		`moneypenny_miss`: []string{`James Bond`, `Computer Science`},
+		`no_dr`:           []string{`Being Evil`, `Ice Cream`, `Sunsets`},
+	}
+
+	t[`chris`] = []string{`coding`, `reading`, `gaming`}
+
+	for k, r := range t {
+		fmt.Printf("Record for %v\n", k)
+		for i, v := range r {
+			fmt.Printf("index %v:\t%v\n", i, v)
+		}
+	}
+}
+
+func ten() {
+	t := map[string][]string{
+		`bond_james`:      []string{`Shaken, not stirred`, `Martinis`, `Women`},
+		`moneypenny_miss`: []string{`James Bond`, `Computer Science`},
+		`no_dr`:           []string{`Being Evil`, `Ice Cream`, `Sunsets`},
+	}
+
+	delete(t, `no_dr`)
+
+	for k, r := range t {
+		fmt.Printf("Record for %v\n", k)
+		for i, v := range r {
+			fmt.Printf("index %v:\t%v\n", i, v)
+		}
 	}
 }

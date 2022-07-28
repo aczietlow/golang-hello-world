@@ -42,7 +42,7 @@ func main() {
 	// Slicing slices
 	fmt.Println(listOdd[0])
 	fmt.Println(listOdd[1])
-	// slice[n:m] n = include position, m = upto but not including
+	// slice[n:m] n = index position, m = cap of slice
 	fmt.Println(listOdd[2:5])
 	// From the beginning to the specified index
 	fmt.Println(listOdd[:5])
