@@ -1,10 +1,17 @@
 package main
 
+import "fmt"
+
+// func (r receiver) identifier(parameters) (returns(s)) {...}
+// when defining a function, it's called parameters
+// when calling a defined function and passing variables, their "arguments"
+
 func main() {
 	sum := addNum(2, 6)
 	println(sum)
 	functions()
 	println(rectProps2(1.8, 4.0))
+	variadic(1, 2, 3, 4)
 }
 
 func functions() {
@@ -20,7 +27,7 @@ func addNum(a int, b int) int {
 }
 
 // multiple return types
-// func functionname(parametername type) (float32, float64)
+// func function name(paaametername type) (float32, float64)
 func rectProps(length, width float64) (float64, float64) {
 	var area = length * width
 	var perimeter = (length + width) * 2
@@ -35,3 +42,18 @@ func rectProps2(length, width float64) (area, perimeter float64) {
 }
 
 // Blank identifier is _
+
+// Everything in go is passed by value.
+
+// Variadic functions
+func variadic(x ...int) {
+	fmt.Println(x)
+	fmt.Printf("%T\n", x)
+	// Receives the variables in a slice of the type of the parameters. ([]int)
+
+	sum := 0
+	for _, v := range x {
+		sum += v
+	}
+	fmt.Printf("The total: %v\n", sum)
+}
