@@ -12,6 +12,12 @@ func main() {
 	functions()
 	println(rectProps2(1.8, 4.0))
 	variadic(1, 2, 3, 4)
+
+	// function expression
+	f := func() {
+		fmt.Println("Calling a function from an expression")
+	}
+	f()
 }
 
 func functions() {
@@ -57,3 +63,9 @@ func variadic(x ...int) {
 	}
 	fmt.Printf("The total: %v\n", sum)
 }
+
+//
+//// Using function as a parameter uses the `func()` as the type
+//func compute(x, y int, equation func()) {
+//	return equation(x, y)
+//}
