@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"sort"
+)
 
 func main() {
 	// Arrays
@@ -56,6 +59,11 @@ func main() {
 	fmt.Println(listOdd[14:])
 	// Just append slices of the slice to remove elements
 	realOdd := append(listOdd[:12], listOdd[14:]...)
+	fmt.Println(realOdd)
+	// Sort the slice from largest to smallest.
+	sort.Slice(realOdd, func(i, j int) bool {
+		return realOdd[i] > realOdd[j]
+	})
 	fmt.Println(realOdd)
 
 }
