@@ -10,7 +10,7 @@ import (
 )
 
 func main() {
-	Listener, err := net.Listen("tcp", "localhost:9001")
+	Listener, err := net.Listen("tcp", "localhost:9002")
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -27,7 +27,7 @@ func echo(conn net.Conn, shout string, delay time.Duration) {
 	fmt.Fprintln(conn, "\t", strings.ToUpper(shout))
 	time.Sleep(delay)
 	fmt.Fprintln(conn, "\t", shout)
-	time.Sleep(delay)
+	time.Sleep(delay * 5)
 	fmt.Fprintln(conn, "\t", strings.ToLower(shout))
 }
 
