@@ -7,6 +7,7 @@ import (
 	"fmt"
 	"golang.org/x/net/html"
 	"net/http"
+	"strings"
 )
 
 // Extract makes an HTTP GET request to the specified URL, parses
@@ -31,11 +32,14 @@ func Fetch(url string) ([]string, error) {
 	var links []string
 	visitNode := func(node *html.Node) {
 		if node.Type == html.ElementNode && node.Data == "a" {
-			for _, a := range node.Attr {
-				if a.Key == "href" {
+			for _, attribute := range node.Attr {
+				if attribute.Key != "href" {
 					continue
 				}
-				link, err := response.Request.URL.Parse(a.Val)
+				if strings.HasPrefix(attribute.Val, "#") || strings.HasPrefix(attribute.Val, "tel") {
+					continue
+				}
+				link, err := response.Request.URL.Parse(attribute.Val)
 				if err != nil {
 					continue
 				}
